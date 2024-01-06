@@ -1,182 +1,266 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-    <link href="https://fonts.googleapis.com/css?family=Dosis:300,400,700" rel="stylesheet"/>
-    <link rel="stylesheet" type="text/css" href="css/styles.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <title>User page</title>
-    <style>
-      * {
-        margin:0;
-        padding:0;
-      }
-      body{
-        font-family: "Dosis", sans-serif;
-        background-color: black;
-      }
-      .navbar{
-        width:300px;
-        height:100%;
-        background-color:black;
-        position:fixed;
-        top:0;
-        right:-300px;
-        display:flex;
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hackthon Project</title>
+</head>
+<link rel="stylesheet" href="style.css">
+
+<body>
+    <div class="wrapper">
+
+        <div class="login-box">
+            <form action="">
+                <h2>Login</h2>
+
+                <div class="input-box">
+                    <span class="icon">
+                        <ion-icon name="mail"></ion-icon>
+                    </span>
+                    <input type="email" required>
+                    <label>Email</label>
+                </div>
+
+                <div class="input-box">
+                    <span class="icon">
+                        <ion-icon name="lock-closed"></ion-icon>
+                    </span>
+                    <input type="password" required>
+                    <label>OTP</label>
+                </div>
+
+                <div class="remember-forgot">
+                    <label><input type="checkbox"> Remember me</label>
+                    <a href="#">Forgot Password?</a>
+                </div>
+
+                <button type="submit">Login</button>
+
+                <div class="register-link">
+                    <p>Don't have an account? <a href="#">Register</a></p>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: system-ui, 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+:root {
+    --text-color: #000;
+    --background-color: linear-gradient(to right, #fed7e1, #c3c2ff);
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+body {
+    overflow-x: hidden;
+    background: var(--background-color);
+}
+
+.container {
+    max-width: 1200px;
+    width: 90%;
+    margin: auto;
+}
+
+.header {
+    padding: 0 12rem;
+    height: 7rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #feefef;
+    margin-top: 2.2rem;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.header .logo {
+    font-size: 2.2rem;
+    color: var(--text-color);
+    cursor: pointer;
+    letter-spacing: 0.1em;
+}
+
+.logo span {
+    color: red;
+}
+
+.navbar-list {
+    display: flex;
+    gap: 4.8rem;
+    list-style: none;
+}
+
+.navbar-link:link,
+.navbar-link:visited {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: 500;
+    color: var(--text-color);
+    transition: all 0.4s ease;
+    letter-spacing: 0.1rem;
+}
+
+.navbar-link:hover,
+.navbar-link:active {
+    color: rgb(255, 0, 13);
+}
+
+.mobile-navbar-btn {
+    display: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+.mobile-nav-icon {
+    width: 4rem;
+    height: 4rem;
+    color: #212529;
+}
+
+.mobile-nav-icon[name="close"] {
+    display: none;
+}
+
+.section-services {
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10rem;
+    width: 100vw;
+}
+
+
+
+.hero h1 {
+    font-size: 6rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 1rem;
+    color: rgb(150, 105, 224);
+    text-align: center;
+}
+
+.hero p {
+    font-size: 1.9rem;
+    margin: 2rem;
+    color: #555;
+    text-align: center;
+    font-weight: 500;
+}
+
+.btn {
+    padding: 0.7rem 2rem;
+    font-size: 2.2rem;
+    text-align: center;
+    font-weight: 500;
+    cursor: pointer;
+    background: transparent;
+    border: 2px solid rgb(150, 105, 224);
+    letter-spacing: 0.1em;
+    color: rgb(142, 88, 230);
+    transition: all 0.4s ease-in-out;
+    margin-left: 41.5%;
+}
+
+.btn:hover {
+    background: rgb(142, 88, 230);
+    color: #f5f5f5;
+}
+
+@media (max-width: 62em) {
+    .mobile-navbar-btn {
+        display: block;
+        z-index: 999;
+        color: #212529;
+    }
+
+    .header {
+        position: relative;
+    }
+
+    .header .logo {
+        width: 40%;
+    }
+
+    .navbar {
+        width: 100%;
+        height: 100vh;
+        background: var(--background-color);
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: flex;
         justify-content: center;
         align-items: center;
-        border-radius:20% 0 0 40%;
-        transition: right 0.8s cubic-bezier(1, 0, 0, 1);
-      }
-      .change{
-        right:0;
-      }
+        transform: translateX(100%);
+        transition: all 0.5s linear;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+    }
 
-      .hamburger-menu{
-        width:35px;
-        height:30px;  
-        position:fixed;
-        top:20px;
-        right:50px;
-        cursor:pointer;
-        display:flex;
+
+    .navbar-list {
         flex-direction: column;
-        justify-content: space-around;
-      }
+        align-items: center;
+    }
 
-      .line{
-        width:100%;
-        height:3px;
-        background-color:white;
-        transition: all 0.8s;
+    .active .navbar {
+        transform: translateX(0);
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
 
-      }
+    .active .mobile-navbar-btn .mobile-nav-icon[name="close"] {
+        display: block;
+    }
 
-      .change .line-1{
-        transform:rotateZ(-405deg) translate(-8px, 6px);
-      }
-      .change .line-2{
-        opacity:0;
-      }
-       .change .line-3{
-        transform:rotateZ(405deg) translate(-8px, -6px);
-      }
+    .active .mobile-navbar-btn .mobile-nav-icon[name="menu"] {
+        display: none;
+    }
+}
 
-      .nav-list{
-        text-align:left;
+/* Below 560px  */
+@media (max-width: 35em) {
+    .header {
+        padding: 0 2.4rem;
+    }
 
-      }
-
-      .nav-item{
-        list-style: none;
-        margin:25px;
-      }
-
-      .nav-link{
-        text-decoration: none;
-        font-size: 22px;
-        color: #eee;
-        font-weight:500;
-        letter-spacing: 1px;
-        text-transform: uppercase;
-        position:relative;
-        padding:3px 0;
-      }
-
-      .nav-link::before,
-      .nav-link::after{
-        content: "";
-        width:100%;
-        height:2px;
-        background-color:red;
-        position:absolute;
-        right:0;
-        transform:scalex(0);
-        transition:transform 0.5s;
-      }
-      .nav-link::after{
-        bottom:0;
-        transform-origin:right;
-      }
-      .nav-link::before{
-        top:0;
-        transform-origin:left;
-      }
-      .nav-link:hover::before,
-      .nav-link:hover::after{
-        transform: scalex(1);
-      }
-    </style>
-
-  </head>
-  <body>
-    <nav>
-      <div class="container">
-        <h1 style="border:5px solid black; font-size: 35px; background-color:white; text-transform: uppercase; text-align: center; border-radius:15px; margin: 0px 500px 0px 500px; padding: 5px;">User</h1>
-      </div>
-    </nav>
-    <div id="demo" class="carousel slide" data-ride="carousel">
-
-        <!-- Indicators -->
-        <ul class="carousel-indicators">
-          <li data-target="#demo" data-slide-to="0" class="active"></li>
-          <li data-target="#demo" data-slide-to="1"></li>
-          <li data-target="#demo" data-slide-to="2"></li>
-        </ul>
-        
-        <!-- The slideshow -->
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="image/uSerbbms1.jpg" alt="Los Angeles" width="1100" height="500">
-          </div>
-          <div class="carousel-item">
-            <img src="image/userbbms2.jpeg" alt="Chicago" width="1100" height="500">
-          </div>
-          <div class="carousel-item">
-            <img src="image/Userbbms3.png" alt="New York" width="1100" height="500">
-          </div>
-        </div>
-        <!-- Left and right controls -->
-  <a class="carousel-control-prev" href="#demo" data-slide="prev">
-    <span class="carousel-control-prev-icon"></span>
-  </a>
-      </div>
-      <div class="container">
-      <nav class="navbar">
-        <div class="hamburger-menu">
-          <div class="line line-1"></div>
-          <div class="line line-2"></div>
-          <div class="line line-3"></div>
-        </div>
-
-        <ul class="nav-list">
-          <li class="nav-item">
-            <a href="rprofile.php" class="nav-link">My Account</a>
-          </li>
-          <li class="nav-item">
-            <a href="blooddinfo.php" class="nav-link">Blood info</a>
-          </li>
-           <li class="nav-item">
-            <a href="abs.php" class="nav-link">Blood available</a>
-          </li>
-           <li class="nav-item">
-            <a href="sentrequest.php" class="nav-link">Status of request</a>
-          </li>
-          
-           <li class="nav-item">
-            <a href="blooddonate.php" class="nav-link">Blood donation request</a>
-          </li>
-           <li class="nav-item">
-            <a href="logout.php" class="nav-link">LogOut</a>
-          </li>
-        </ul>
-     </nav>
-    </div>
-    <script src="script.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  </body>
-</html>
+    .header .logo {
+        width: 60%;
+    }
+}
