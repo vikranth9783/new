@@ -1,203 +1,182 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <link href="https://fonts.googleapis.com/css?family=Dosis:300,400,700" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>User page</title>
+    <style>
+      * {
+        margin:0;
+        padding:0;
+      }
+      body{
+        font-family: "Dosis", sans-serif;
+        background-color: black;
+      }
+      .navbar{
+        width:300px;
+        height:100%;
+        background-color:black;
+        position:fixed;
+        top:0;
+        right:-300px;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        border-radius:20% 0 0 40%;
+        transition: right 0.8s cubic-bezier(1, 0, 0, 1);
+      }
+      .change{
+        right:0;
+      }
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hackathon Project</title>
-    <link rel="stylesheet" href="https://unpkg.com/ionicons@5.0.2/dist/css/ionicons.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-</head>
+      .hamburger-menu{
+        width:35px;
+        height:30px;  
+        position:fixed;
+        top:20px;
+        right:50px;
+        cursor:pointer;
+        display:flex;
+        flex-direction: column;
+        justify-content: space-around;
+      }
 
-<body class="bg-cover bg-center bg-fixed animateBg">
-    <div class="flex justify-center items-center h-screen">
-        <div class="relative w-96 h-96 bg-transparent border-2 border-white/50 flex justify-center items-center backdrop-blur">
-            <form action="" method="post" class="w-full">
-                <h2 class="text-white text-2xl mb-6">Login</h2>
+      .line{
+        width:100%;
+        height:3px;
+        background-color:white;
+        transition: all 0.8s;
 
-                <div class="input-box mb-8">
-                    <span class="icon">
-                        <ion-icon name="mail" class="text-white"></ion-icon>
-                    </span>
-                    <input type="email" required class="w-full bg-transparent border-none outline-none text-white placeholder-white/50" aria-label="Email">
-                    <label class="absolute top-1/2 left-2 transform -translate-y-1/2 text-white text-sm transition">Email</label>
-                </div>
+      }
 
-                <div class="input-box mb-8">
-                    <span class="icon">
-                        <ion-icon name="lock-closed" class="text-white"></ion-icon>
-                    </span>
-                    <input type="password" required class="w-full bg-transparent border-none outline-none text-white placeholder-white/50" aria-label="OTP">
-                    <label class="absolute top-1/2 left-2 transform -translate-y-1/2 text-white text-sm transition">OTP</label>
-                </div>
+      .change .line-1{
+        transform:rotateZ(-405deg) translate(-8px, 6px);
+      }
+      .change .line-2{
+        opacity:0;
+      }
+       .change .line-3{
+        transform:rotateZ(405deg) translate(-8px, -6px);
+      }
 
-                <div class="remember-forgot mb-4 flex justify-between text-white text-sm">
-                    <label><input type="checkbox" class="mr-1"> Remember me</label>
-                    <a href="#" class="hover:underline">Forgot Password?</a>
-                </div>
+      .nav-list{
+        text-align:left;
 
-                <button type="submit" class="w-full h-10 bg-white rounded-full cursor-pointer text-black text-sm font-semibold">Login</button>
+      }
 
-                <div class="register-link mt-6 text-white text-sm text-center">
-                    <p>Don't have an account? <a href="#" class="font-semibold hover:underline">Register</a></p>
-                </div>
-            </form>
+      .nav-item{
+        list-style: none;
+        margin:25px;
+      }
+
+      .nav-link{
+        text-decoration: none;
+        font-size: 22px;
+        color: #eee;
+        font-weight:500;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        position:relative;
+        padding:3px 0;
+      }
+
+      .nav-link::before,
+      .nav-link::after{
+        content: "";
+        width:100%;
+        height:2px;
+        background-color:red;
+        position:absolute;
+        right:0;
+        transform:scalex(0);
+        transition:transform 0.5s;
+      }
+      .nav-link::after{
+        bottom:0;
+        transform-origin:right;
+      }
+      .nav-link::before{
+        top:0;
+        transform-origin:left;
+      }
+      .nav-link:hover::before,
+      .nav-link:hover::after{
+        transform: scalex(1);
+      }
+    </style>
+
+  </head>
+  <body>
+    <nav>
+      <div class="container">
+        <h1 style="border:5px solid black; font-size: 35px; background-color:white; text-transform: uppercase; text-align: center; border-radius:15px; margin: 0px 500px 0px 500px; padding: 5px;">User</h1>
+      </div>
+    </nav>
+    <div id="demo" class="carousel slide" data-ride="carousel">
+
+        <!-- Indicators -->
+        <ul class="carousel-indicators">
+          <li data-target="#demo" data-slide-to="0" class="active"></li>
+          <li data-target="#demo" data-slide-to="1"></li>
+          <li data-target="#demo" data-slide-to="2"></li>
+        </ul>
+        
+        <!-- The slideshow -->
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="image/uSerbbms1.jpg" alt="Los Angeles" width="1100" height="500">
+          </div>
+          <div class="carousel-item">
+            <img src="image/userbbms2.jpeg" alt="Chicago" width="1100" height="500">
+          </div>
+          <div class="carousel-item">
+            <img src="image/Userbbms3.png" alt="New York" width="1100" height="500">
+          </div>
         </div>
+        <!-- Left and right controls -->
+  <a class="carousel-control-prev" href="#demo" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </a>
+      </div>
+      <div class="container">
+      <nav class="navbar">
+        <div class="hamburger-menu">
+          <div class="line line-1"></div>
+          <div class="line line-2"></div>
+          <div class="line line-3"></div>
+        </div>
+
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a href="rprofile.php" class="nav-link">My Account</a>
+          </li>
+          <li class="nav-item">
+            <a href="blooddinfo.php" class="nav-link">Blood info</a>
+          </li>
+           <li class="nav-item">
+            <a href="abs.php" class="nav-link">Blood available</a>
+          </li>
+           <li class="nav-item">
+            <a href="sentrequest.php" class="nav-link">Status of request</a>
+          </li>
+          
+           <li class="nav-item">
+            <a href="blooddonate.php" class="nav-link">Blood donation request</a>
+          </li>
+           <li class="nav-item">
+            <a href="logout.php" class="nav-link">LogOut</a>
+          </li>
+        </ul>
+     </nav>
     </div>
-
-<style>
-
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
-}
-
-.wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    width: 100%;
-    background: url('https://wallpapercave.com/wp/wp4323463.jpg') no-repeat;
-    background-size: cover;
-    background-position: center;
-    animation: animateBg 5s linear infinite;
-}
-
-@keyframes animateBg {
-    100% {
-        filter: hue-rotate(360deg);
-    }
-}
-
-.login-box {
-    position: relative;
-    width: 400px;
-    height: 450px;
-    background: transparent;
-    border-radius: 15px;
-    border: 2px solid rgba(255, 255, 255, .5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    backdrop-filter: blur(15px);
-}
-
-h2 {
-    font-size: 2em;
-    color: #fff;
-    text-align: center;
-}
-
-.input-box {
-    position: relative;
-    width: 310px;
-    margin: 30px 0;
-    border-bottom: 1px solid #fff;
-}
-
-.input-box label {
-    position: absolute;
-    top: 50%;
-    left: 5px;
-    transform: translateY(-50%);
-    font-size: 1em;
-    color: #fff;
-    pointer-events: none;
-    transition: .5s;
-}
-
-.input-box input:focus~label,
-.input-box input:valid~label {
-    top: -5px;
-}
-
-.input-box input {
-    width: 100%;
-    height: 50px;
-    background: transparent;
-    border: none;
-    outline: none;
-    font-size: 1em;
-    color: #fff;
-    padding: 0 35px 0 5px;
-}
-
-.input-box .icon {
-    position: absolute;
-    right: 8px;
-    top: 50%;
-    color: #fff;
-    transform: translateY(-50%);
-}
-
-.remember-forgot {
-    margin: -15px 0 15px;
-    font-size: .9em;
-    color: #fff;
-    display: flex;
-    justify-content: space-between;
-}
-
-.remember-forgot label input {
-    margin-right: 3px;
-}
-
-.remember-forgot a {
-    color: #fff;
-    text-decoration: none;
-}
-
-.remember-forgot a:hover {
-    text-decoration: underline;
-}
-
-button {
-    width: 100%;
-    height: 40px;
-    background-color: #fff;
-    border: none;
-    border-radius: 40px;
-    cursor: pointer;
-    font-size: 1em;
-    color: #000;
-    font-weight: 500;
-}
-
-.register-link {
-    font-size: .9em;
-    color: #fff;
-    text-align: center;
-    margin: 25px 0 10px;
-}
-
-.register-link p a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: 600;
-}
-
-.register-link p a:hover {
-    text-decoration: underline;
-}
-
-@media (max-width:500px) {
-    .login-box {
-        width: 100%;
-        height: 100vh;
-        border: none;
-        border-radius: 0;
-    }
-
-    .input-box {
-        width: 290px;
-    }
-}
-</style>
-</body>
-
+    <script src="script.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
 </html>
