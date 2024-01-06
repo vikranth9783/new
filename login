@@ -7,9 +7,10 @@
     <title>Hackathon Project</title>
     <link rel="stylesheet" href="https://unpkg.com/ionicons@5.0.2/dist/css/ionicons.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
 </head>
 
-<body class="bg-cover bg-center bg-fixed animateBg">
+<body class="bg-cover bg-center bg-fixed animateBg font-montserrat">
     <div class="flex justify-center items-center h-screen">
         <div class="relative w-96 h-96 bg-transparent border-2 border-white/50 flex justify-center items-center backdrop-blur">
             <form action="" method="post" class="w-full">
@@ -27,8 +28,8 @@
                     <span class="icon">
                         <ion-icon name="lock-closed" class="text-white"></ion-icon>
                     </span>
-                    <input type="password" required class="w-full bg-transparent border-none outline-none text-white placeholder-white/50" aria-label="OTP">
-                    <label class="absolute top-1/2 left-2 transform -translate-y-1/2 text-white text-sm transition">OTP</label>
+                    <input type="password" required class="w-full bg-transparent border-none outline-none text-white placeholder-white/50" aria-label="Password">
+                    <label class="absolute top-1/2 left-2 transform -translate-y-1/2 text-white text-sm transition">Password</label>
                 </div>
 
                 <div class="remember-forgot mb-4 flex justify-between text-white text-sm">
